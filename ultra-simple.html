@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markdown Editor - Ultra Simple</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial; }
+        .app { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: 90vh; }
+        textarea, #preview { border: 2px solid #ddd; padding: 15px; border-radius: 5px; }
+        textarea { font-family: monospace; resize: none; }
+        #preview { overflow-y: auto; }
+        .controls { margin: 10px 0; }
+        button { padding: 8px 15px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>📝 Markdown Editor</h1>
+    <div class="controls">
+        <button onclick="save()">💾 Save</button>
+        <button onclick="exportDoc()">📥 Export</button>
+        <button onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+    
+    <div class="app">
+        <textarea id="editor" placeholder="# Type markdown here..."># Welcome!
+
+## Features:
+- **Real-time** preview
+- *Auto-save* to browser
+- Export as `.md` file
+- Dark/light theme
+
+\`console.log("Hello!")\`</textarea>
+        <div id="preview"></div>
+    </div>
+
+    <script>
+        let darkMode = false;
+        
+        function parseMarkdown(text) {
+            return text
+                .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/`([^`]+)`/g, '<code>$1</code>')
+                .replace(/^- (.*$)/gm, '<li>$1</li>')
+                .replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/\n/g, '<br>');
+        }
+        
+        function updatePreview() {
+            const text = document.getElementById('editor').value;
+            document.getElementById('preview').innerHTML = parseMarkdown(text);
+            localStorage.setItem('md_content', text);
+        }
+        
+        function save() {
+            alert('Saved to browser!');
+        }
+        
+        function exportDoc() {
+            const text = document.getElementById('editor').value;
+            const blob = new Blob([text], {type: 'text/markdown'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'document.md';
+            a.click();
+        }
+        
+        function toggleTheme() {
+            darkMode = !darkMode;
+            document.body.style.backgroundColor = darkMode ? '#222' : '#fff';
+            document.body.style.color = darkMode ? '#fff' : '#000';
+        }
+        
+        // Load saved content
+        const saved = localStorage.getItem('md_content');
+        if (saved) {
+            document.getElementById('editor').value = saved;
+        }
+        
+        // Setup
+        document.getElementById('editor').addEventListener('input', updatePreview);
+        updatePreview();
+        
+        console.log('✅ App loaded successfully!');
+    </script>
+</body>
+</html>~
