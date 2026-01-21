@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor - Pure JS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading indicator -->
+    <div id="loading" style="padding: 20px; text-align: center;">
+        <h2>Loading Markdown Editor...</h2>
+        <p>Please wait while the application loads.</p>
+    </div>
+    
+    <!-- Scripts in order -->
+    <script>
+        // Hide loading when app is ready
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('loading').style.display = 'none';
+        });
+    </script>
+    
+    <script src="themeManager.js"></script>
+    <script src="storageManager.js"></script>
+    <script src="markdownParser.js"></script>
+    <script src="exportHandler.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
