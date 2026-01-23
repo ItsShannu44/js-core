@@ -80,7 +80,6 @@ class MarkdownParser {
             });
         }
         
-        // Highlight strings
         code = code.replace(/(["'`])(.*?)\1/g, '<span class="string">$1$2$1</span>');
         
         // Highlight numbers
