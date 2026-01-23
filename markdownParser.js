@@ -8,6 +8,8 @@ class MarkdownParser {
         
         this.rules = this.initRules();
     }
+
+    
     initRules() {
         return [
             { pattern: /^#{6}\s+(.+)$/gm, replace: '<h6>$1</h6>' },
