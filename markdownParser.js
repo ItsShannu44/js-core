@@ -86,7 +86,6 @@ class MarkdownParser {
         // Highlight numbers
         code = code.replace(/\b(\d+)\b/g, '<span class="number">$1</span>');
         
-        // Highlight comments
         code = code.replace(/(\/\/.*$|\/\*[\s\S]*?\*\/)/gm, '<span class="comment">$1</span>');
         
         return code;
