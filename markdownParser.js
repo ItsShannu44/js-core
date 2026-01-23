@@ -63,6 +63,7 @@ class MarkdownParser {
         return html;
     }
     
+    
     highlightSyntax(code, language) {
         const keywords = {
             javascript: ['function', 'const', 'let', 'var', 'if', 'else', 'for', 'while', 'return', 'class', 'import', 'export', 'try', 'catch'],
