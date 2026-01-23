@@ -41,7 +41,6 @@ class MarkdownParser {
         
         let html = text;
         
-        // Apply all rules
         this.rules.forEach(rule => {
             html = html.replace(rule.pattern, rule.replace);
         });
