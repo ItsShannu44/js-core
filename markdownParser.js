@@ -1,4 +1,3 @@
-// markdownParser.js
 class MarkdownParser {
     constructor(options = {}) {
         this.options = {
