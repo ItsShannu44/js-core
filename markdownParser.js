@@ -50,7 +50,7 @@ class MarkdownParser {
             return match.replace(/<\/ul>\s*<ul>/g, '');
         });
         
-        // Handle paragraphs
+
         html = html.replace(/^\s*(\n)?(.+)/gm, (m, br, line) => {
             return /^\s*<(h\d|ul|ol|li|blockquote|pre|img|hr)/.test(line) ? line : '<p>' + line + '</p>';
         });
