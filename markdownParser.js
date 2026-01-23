@@ -92,4 +92,3 @@ class MarkdownParser {
         return code;
     }
 }
-
