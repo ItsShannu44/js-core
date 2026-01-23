@@ -44,8 +44,7 @@ class MarkdownParser {
         this.rules.forEach(rule => {
             html = html.replace(rule.pattern, rule.replace);
         });
-        
-        // Wrap list items
+
         html = html.replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>');
         html = html.replace(/<ul>[\s\S]*?<\/ul>/g, match => {
             return match.replace(/<\/ul>\s*<ul>/g, '');
