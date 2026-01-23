@@ -55,7 +55,7 @@ class MarkdownParser {
             return /^\s*<(h\d|ul|ol|li|blockquote|pre|img|hr)/.test(line) ? line : '<p>' + line + '</p>';
         });
         
-        // Handle line breaks
+        // line breaks
         if (this.options.breaks) {
             html = html.replace(/\n/g, '<br>');
         }
