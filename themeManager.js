@@ -2,7 +2,6 @@
     'use strict';
     
     class ThemeManager {
-        
         constructor() {
             this.themes = {
                 light: {
