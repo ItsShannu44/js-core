@@ -2,6 +2,7 @@
     'use strict';
     
     class ThemeManager {
+        
         constructor() {
             this.themes = {
                 light: {
@@ -26,7 +27,6 @@
             this.init();
         }
         
-
 
         init() {
             this.loadSavedTheme();
@@ -92,5 +92,5 @@
         }
     }
     window.ThemeManager = ThemeManager;
-    
+
 })();
