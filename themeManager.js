@@ -1,4 +1,3 @@
-// themeManager.js - FIXED VERSION
 (function() {
     'use strict';
     
