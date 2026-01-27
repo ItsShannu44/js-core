@@ -27,7 +27,7 @@
         }
         
 
-        
+
         init() {
             this.loadSavedTheme();
             this.applyTheme(this.currentTheme);
@@ -92,4 +92,5 @@
         }
     }
     window.ThemeManager = ThemeManager;
+    
 })();
