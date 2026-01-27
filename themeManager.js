@@ -43,6 +43,7 @@
             return false;
         }
         
+        
         updateCSSVariables() {
             const theme = this.themes[this.currentTheme];
             let css = ':root {\n';
