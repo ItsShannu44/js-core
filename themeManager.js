@@ -26,6 +26,8 @@
             this.init();
         }
         
+
+        
         init() {
             this.loadSavedTheme();
             this.applyTheme(this.currentTheme);
