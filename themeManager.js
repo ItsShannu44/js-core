@@ -91,7 +91,5 @@
             return this.currentTheme;
         }
     }
-    
-    // Make it globally available
     window.ThemeManager = ThemeManager;
 })();
