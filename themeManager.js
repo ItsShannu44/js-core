@@ -43,7 +43,7 @@
             return false;
         }
         
-        
+
         updateCSSVariables() {
             const theme = this.themes[this.currentTheme];
             let css = ':root {\n';
@@ -53,8 +53,6 @@
             });
             
             css += '}\n';
-            
-            // Update or create style element
             let style = document.getElementById('theme-variables');
             if (!style) {
                 style = document.createElement('style');
