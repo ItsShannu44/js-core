@@ -1,8 +1,6 @@
-// app.js - Complete working version
 (function() {
     'use strict';
-    
-    // Check if DOM is ready
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initApp);
     } else {
