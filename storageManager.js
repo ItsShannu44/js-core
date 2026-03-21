@@ -1,4 +1,3 @@
-// storageManager.js - FIXED VERSION
 (function() {
     'use strict';
     
@@ -103,6 +102,5 @@
         }
     }
     
-    // Make it globally available
     window.StorageManager = StorageManager;
 })();
