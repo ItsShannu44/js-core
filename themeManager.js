@@ -41,6 +41,7 @@
                 return true;
             }
             return false;
+            
         }
         
 
@@ -92,4 +93,6 @@
     }
     window.ThemeManager = ThemeManager;
 
+
+    
 })();
