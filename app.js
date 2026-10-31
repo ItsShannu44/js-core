@@ -9,7 +9,7 @@
     
     function initApp() {
         try {
-            new MarkdownApp();
+            new Markd ownApp();
         } catch (error) {
             console.error('Failed to start app:', error);
             showError(error);
