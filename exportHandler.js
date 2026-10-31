@@ -1,6 +1,7 @@
 // exportHandler.js
 class ExportHandler {
-
+                constructor() {
+        this.formats = {
             markdown: { ext: '.md', mime: 'text/markdown' },
             html: { ext: '.html', mime: 'text/html' },
             pdf: { ext: '.pdf', mime: 'application/pdf' },
