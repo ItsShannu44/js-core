@@ -57,11 +57,11 @@ class ExportHandler {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `${filename.replace(/\s+/g, '_')}${formatInfo.ext}`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+
+
+
+
+        
     }
     
     printDocument(content) {
